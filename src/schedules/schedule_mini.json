@@ -1,89 +1,6 @@
 {
     "courses": [
         {
-            "course_title": "Software Construction",
-            "course_code": "SEG2106",
-            "sections": [
-                {
-                    "section": "A",
-                    "professor": "Hussein Al Osman",
-                    "activities": [
-                        {
-                            "location": "LEE A131",
-                            "day": "Thursday",
-                            "start": "11:30",
-                            "end": "13:00",
-                            "activity": "LEC",
-                            "section": "A00"
-                        },
-                        {
-                            "location": "LEE A131",
-                            "day": "Tuesday",
-                            "start": "13:00",
-                            "end": "14:30",
-                            "activity": "LEC",
-                            "section": "A00"
-                        },
-                        {
-                            "location": "STE 2060",
-                            "day": "Monday",
-                            "start": "19:00",
-                            "end": "22:00",
-                            "activity": "LAB",
-                            "section": "A01"
-                        },
-                        {
-                            "location": "STE 2052",
-                            "day": "Friday",
-                            "start": "17:30",
-                            "end": "20:30",
-                            "activity": "LAB",
-                            "section": "A02"
-                        }
-                    ]
-                },
-                {
-                    "section": "B",
-                    "professor": "Not available at this time.",
-                    "activities": [
-                        {
-                            "location": "MNO E218",
-                            "day": "Friday",
-                            "start": "16:00",
-                            "end": "17:30",
-                            "activity": "LEC",
-                            "section": "B00"
-                        },
-                        {
-                            "location": "MNO E218",
-                            "day": "Tuesday",
-                            "start": "14:30",
-                            "end": "16:00",
-                            "activity": "LEC",
-                            "section": "B00"
-                        },
-                        {
-                            "location": "STE 2052",
-                            "day": "Monday",
-                            "start": "19:00",
-                            "end": "22:00",
-                            "activity": "LAB",
-                            "section": "B01"
-                        },
-                        {
-                            "location": "STE 0131",
-                            "day": "Wednesday",
-                            "start": "19:00",
-                            "end": "22:00",
-                            "activity": "LAB",
-                            "section": "B02"
-                        }
-                    ]
-                }
-            ],
-            "url": "https://web30.uottawa.ca/v3/SITS/timetable/Course.aspx?id=028723&term=2181&session=FS\n"
-        },
-        {
             "course_title": "Social Context of Business",
             "course_code": "ADM1101",
             "sections": [
@@ -132,27 +49,6 @@
                 }
             ],
             "url": "https://web30.uottawa.ca/v3/SITS/timetable/Course.aspx?id=000003&term=2181&session=FS\n"
-        },
-        {
-            "course_title": "Social Context of Business",
-            "course_code": "ADM1301",
-            "sections": [
-                {
-                    "section": "M",
-                    "professor": "Not available at this time.",
-                    "activities": [
-                        {
-                            "location": "DMS 1160",
-                            "day": "Tuesday",
-                            "start": "19:00",
-                            "end": "22:00",
-                            "activity": "LEC",
-                            "section": "M00"
-                        }
-                    ]
-                }
-            ],
-            "url": "https://web30.uottawa.ca/v3/SITS/timetable/Course.aspx?id=000004&term=2181&session=FS\n"
         },
         {
             "course_title": "Financial Accounting",
