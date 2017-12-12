@@ -4,43 +4,49 @@ import React from "react";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { week } from "./constants";
 import ScheduleTree from './helpers/Tree';
+import "./Calendar.css"
+import Courses from '../schedules/schedules_winter_2018_final.json';
+import {store} from '../store';
+
 
 BigCalendar.momentLocalizer(moment);
-let event = [];
 export default class ScheduleCalendar extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
             scheduleCombinations: [],
-            num: 0
+            num: 0,
+            courses: []
         }
-        setInterval(_ => {
-            this.setState({ num: this.state.num + 1 % 2 })
-
-        }, 10000);
-
+        store.subscribe(() => this.update())
+        this.update();
     }
 
-    evaluate() {
-        const courses = this.props.courses;
-        const coursesLength = courses.length
-        const schedule = {};
-        // courses.forEach(course => {
-        //     if (!course.fail)
-        //         console.log((new CourseTree(course)).generate());
-        // });
+    update() {
+        const courses = store.getState();
+        const selectedCourses = [];
+        courses.forEach(course => {
+            const c = Courses.courses.find((obj)=> obj.course_code === course);
+            c && selectedCourses.push(c);
+        });
+        this.setState({courses: selectedCourses});
+    }
 
-        console.log(event);
+
+    prerender(){
+        const schedules = this.state.courses.length > 0 && (new ScheduleTree(this.state.courses)).forCalendar();
+        const schedule = schedules.length > 0 ? schedules[0] : []
+        debugger;
+        return schedule;
     }
 
     render() {
-        const schedules = (new ScheduleTree(this.props.courses)).forCalendar();
-        let schedule = schedules.length > 0 ? schedules[0] : []
+       
         return (
             <div>
                 <BigCalendar
-                    events={schedule}
+                    events={this.prerender()}
                     min={week.day("Monday").hour(8).minute(0).toDate()}
                     max={week.day("Monday").hour(22).minute(30).toDate()}
                     defaultDate={week.toDate()}

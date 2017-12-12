@@ -91,7 +91,7 @@ class SectionTree {
             while (activeNode !== this._root) {
                 let [startHour, startMin] = activeNode.elem.start.split(":");
                 let [endHour, endMin] = activeNode.elem.end.split(":");
-                times.forEach(time => {
+                times.forEach(time => { // eslint-disable-line no-loop-func
                     if (time.day !== activeNode.elem.day) {
                         return;
                     }
@@ -168,7 +168,7 @@ export default class ScheduleTree {
         const _this = this;
         this.schedules = [];
         courses.forEach(course => {
-            if (course.fail == true) {
+            if (course.fail === true) {
                 console.log("Unable to retrieve course");
                 return;
             }
@@ -197,8 +197,6 @@ export default class ScheduleTree {
         });
 
         const leaves = activeNode;
-        const leavesLength = leaves.length;
-        const scheduleList = []
 
         let myLeaves = leaves;
         console.log(leaves);
@@ -207,9 +205,9 @@ export default class ScheduleTree {
             let currNode = leaf;
             let times = {};
             while (currNode !== this._root) {
-                currNode.elem.combination.forEach(comb => {
+                currNode.elem.combination.forEach(comb => { // eslint-disable-line no-loop-func
                     if (times[`${comb.day}${comb.start}`] === undefined) {
-                        times[`${comb.day}${comb.start}`] = comb;
+                        times[`${comb.day}${comb.start}`] = comb; // eslint-disable-line no-loop-func
                     } else {
                         debugger;
                         myLeaves[myLeaves.indexOf(leaf)] = null;
@@ -232,9 +230,9 @@ export default class ScheduleTree {
             const schedule = [];
             while (activeNode !== this._root) {
                 let course_code;
-                Object.keys(this.courseSegment).forEach(course => {
+                Object.keys(this.courseSegment).forEach(course => { // eslint-disable-line no-loop-func
                     if (this.courseSegment[course].indexOf(activeNode) > -1) {
-                        course_code = course;
+                        course_code = course; // eslint-disable-line no-loop-func
                     }
                 })
                 activeNode.elem.combination.forEach(activity => {
@@ -242,7 +240,7 @@ export default class ScheduleTree {
                     let [endHour, endMin] = activity.end.split(":");
                     schedule.push({
                         start: week.day(activity.day).hour(parseInt(startHour, 10)).minute(parseInt(startMin, 10)).toDate(),
-                        end: week.day(activity.day).hour(parseInt(endHour, 10)).minute(parseInt(endMin)).toDate(),
+                        end: week.day(activity.day).hour(parseInt(endHour, 10)).minute(parseInt(endMin, 10)).toDate(),
                         title: `${activity.activity} | ${course_code} | ${activity.location}`
                     })
                 })
